@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-card">
+    <h1>Detect Phishing Like a Cyber Pro 🛡️</h1>
+    <p>
+      This simulator trains you to identify real-world phishing emails, scam messages,
+      and social engineering tricks.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('start') }}">
+        Start Simulation
+      </a>
+      <div class="mini-note">
+        8 scenarios • Instant feedback • Final safety score
+      </div>
+    </div>
+  </div>
+
+  <div class="side-card">
+    <h3>What You Will Learn</h3>
+    <ul>
+      <li>How fake links look</li>
+      <li>Common scam patterns</li>
+      <li>Red flags in emails & SMS</li>
+      <li>How attackers create urgency</li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}

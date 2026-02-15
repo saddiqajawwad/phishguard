@@ -1,0 +1,418 @@
+/* =========================
+   PhishGuard - Cyber UI
+   No Bootstrap. Pure CSS.
+   ========================= */
+
+:root {
+  --bg: #070a12;
+  --card: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.10);
+  --text: #e9ecff;
+  --muted: rgba(233, 236, 255, 0.65);
+
+  --primary: #4de1ff;
+  --primary-soft: rgba(77, 225, 255, 0.15);
+
+  --danger: #ff4d6d;
+  --danger-soft: rgba(255, 77, 109, 0.15);
+
+  --good: #36ff9a;
+  --good-soft: rgba(54, 255, 154, 0.15);
+
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background grid effect */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77, 225, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 225, 255, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 24px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Topbar */
+.topbar {
+  width: min(1100px, 92%);
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--primary), var(--good));
+  box-shadow: var(--shadow);
+}
+
+.brand-text .title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.brand-text .subtitle {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tag {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* Footer */
+.footer {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 18px 0 30px;
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer .dot {
+  opacity: 0.4;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+/* Hero layout */
+.hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.hero-card h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.hero-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mini-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.side-card h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.side-card ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.side-card li {
+  color: var(--muted);
+  padding-left: 14px;
+  position: relative;
+}
+
+.side-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* Page head */
+.page-head {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.page-head h2 {
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+/* Progress bar */
+.progress {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--good));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+/* Quiz */
+.quiz-card {
+  display: grid;
+  gap: 14px;
+}
+
+.chip {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+}
+
+.scenario-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.extra-box {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px dashed rgba(77, 225, 255, 0.35);
+  background: rgba(77, 225, 255, 0.06);
+  color: rgba(233, 236, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+  border: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--good));
+  color: var(--bg);
+  box-shadow: 0 16px 40px rgba(77, 225, 255, 0.12);
+}
+
+.btn.ghost {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--text);
+}
+
+.btn.legit {
+  background: var(--good-soft);
+  border: 1px solid rgba(54, 255, 154, 0.35);
+  color: var(--text);
+}
+
+.btn.phishing {
+  background: var(--danger-soft);
+  border: 1px solid rgba(255, 77, 109, 0.35);
+  color: var(--text);
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 4px rgba(77, 225, 255, 0.10);
+}
+
+/* Form */
+.answer-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Feedback */
+.feedback-card {
+  display: grid;
+  gap: 16px;
+}
+
+.status {
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.status.good {
+  background: var(--good-soft);
+  border: 1px solid rgba(54, 255, 154, 0.35);
+}
+
+.status.bad {
+  background: var(--danger-soft);
+  border: 1px solid rgba(255, 77, 109, 0.35);
+}
+
+.explain h3,
+.flags h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.explain p {
+  color: rgba(233, 236, 255, 0.80);
+  line-height: 1.6;
+}
+
+.flags ul {
+  margin-top: 8px;
+  padding-left: 18px;
+  color: rgba(233, 236, 255, 0.80);
+  display: grid;
+  gap: 8px;
+}
+
+/* Result */
+.result-card {
+  display: grid;
+  gap: 18px;
+}
+
+.score-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.score, .percent {
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+  text-align: center;
+}
+
+.score {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.percent {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.level {
+  font-size: 14px;
+  color: rgba(233, 236, 255, 0.85);
+}
+
+.level-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(77, 225, 255, 0.10);
+  border: 1px solid rgba(77, 225, 255, 0.30);
+  font-weight: 800;
+}
+
+.result-message {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .answer-form {
+    grid-template-columns: 1fr;
+  }
+}

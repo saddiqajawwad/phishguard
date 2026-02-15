@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishGuard | Cyber Awareness Simulator</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">PG</div>
+      <div class="brand-text">
+        <div class="title">PhishGuard</div>
+        <div class="subtitle">Cybersecurity Awareness Simulator</div>
+      </div>
+    </div>
+
+    <div class="tag">
+      Built for IT Department Exhibition
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 | PhishGuard Demo</span>
+    <span class="dot">•</span>
+    <span>Made by Saddiqa (BS IT)</span>
+  </footer>
+</body>
+</html>

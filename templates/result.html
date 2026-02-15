@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card result-card">
+  <h2>Final Result 🧾</h2>
+
+  <div class="score-box">
+    <div class="score">
+      {{ score }} / {{ total }}
+    </div>
+    <div class="percent">
+      {{ percentage }}%
+    </div>
+  </div>
+
+  <div class="level">
+    Safety Level: <span class="level-badge">{{ level }}</span>
+  </div>
+
+  <p class="result-message">{{ message }}</p>
+
+  <div class="hero-actions">
+    <a class="btn primary" href="{{ url_for('restart') }}">Restart Simulation</a>
+    <a class="btn ghost" href="{{ url_for('index') }}">Home</a>
+  </div>
+
+  <div class="mini-note">
+    This project demonstrates phishing detection awareness using real-world simulation scenarios.
+  </div>
+</div>
+
+{% endblock %}
