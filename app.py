@@ -3,6 +3,7 @@ from questions import QUESTIONS
 
 app = Flask(__name__)
 
+
 # Secret key is required for session (score + progress).
 
 app.secret_key = "phishguard_secret_key_2026"
@@ -144,4 +145,4 @@ def restart():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
